@@ -1,6 +1,6 @@
 import Logger from "../Logger";
 import _ from 'lodash';
-import CookieManager from '@react-native-community/cookies';
+import CookieManager from 'react-native-cookies';
 import EnvironmentConfig from "../../views/common/EnvironmentConfig";
 
 const fetchWithTimeOut = (url, options, timeout = 20000) => {
@@ -32,7 +32,7 @@ const makeParams = (type, xsrfTokenCookie) => {
         'Content-Type': 'application/json'
     };
     if (!_.isNil(xsrfTokenCookie)) {
-        jsonRequestHeaders["X-XSRF-TOKEN"] = xsrfTokenCookie.value;
+        jsonRequestHeaders["X-XSRF-TOKEN"] = xsrfTokenCookie;
     }
     return new Map(
         [['json', {

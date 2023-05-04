@@ -1,8 +1,8 @@
 {
   "FREE_TEXT_FACILITY_NAME_SUPPORT": true,
   "ALLOW_INCOMPLETE_SUBMIT": false,
-  "SERVER_URL": "https://gunak.nhsrcindia.org",
-  "SERVER_URL_IOS": "https://gunak.nhsrcindia.org",
+  "SERVER_URL": "https://nhsrcfaa.prd.dcservices.in",
+  "SERVER_URL_IOS": "https://nhsrcfaa.prd.dcservices.in",
   "TRACK_LOCATION": false,
   "AUTO_GENERATE_SERIES_NUMBER": true,
   "ENV": "prod",

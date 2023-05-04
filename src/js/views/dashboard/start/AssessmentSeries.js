@@ -1,5 +1,5 @@
 import React from "react";
-import {Platform, StyleSheet, TextInput, View} from "react-native";
+import {Platform, StyleSheet, TextInput, View, TouchableOpacity} from "react-native";
 import AbstractComponent from "../../common/AbstractComponent";
 import Actions from "../../../action";
 import PrimaryColors from "../../styles/PrimaryColors";
@@ -43,7 +43,9 @@ class AssessmentSeries extends AbstractComponent {
     renderAssessmentNumbers(series) {
         return this.props.seriesOptions.map((item, idx) => <View style={{marginTop: 20, flexDirection: 'row'}} key={item}>
                 <Radio selected={item === series} onPress={() => this.seriesNumberChanged(item)}/>
-                <Text style={{marginLeft: 10}}>{item}</Text>
+                <TouchableOpacity onPress={()=> this.seriesNumberChanged(item)}>
+                    <Text style={{marginLeft: 10}}>{item}</Text>
+                </TouchableOpacity>
             </View>);
     }
 

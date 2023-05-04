@@ -5,7 +5,7 @@ import Logger from "../framework/Logger";
 import SettingsService from "./SettingsService";
 import UserService from "./UserService";
 import EnvironmentConfig from "../views/common/EnvironmentConfig";
-import CookieManager from '@react-native-community/cookies';
+import CookieManager from 'react-native-cookies';
 
 @Service("authService")
 class AuthService extends BaseService {
@@ -39,7 +39,7 @@ class AuthService extends BaseService {
             const headerData = {'Content-Type': 'application/x-www-form-urlencoded'};
             const xsrfTokenCookie = cookies["XSRF-TOKEN"];
             if (!_.isNil(xsrfTokenCookie)) {
-                headerData["X-XSRF-TOKEN"] = xsrfTokenCookie.value;
+                headerData["X-XSRF-TOKEN"] = xsrfTokenCookie;
             }
             requestInfo.headers = new Headers(headerData);
             Logger.logDebug("AuthService", headerData);

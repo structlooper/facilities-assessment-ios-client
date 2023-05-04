@@ -5,7 +5,7 @@ import SettingsService from "./SettingsService";
 import _ from "lodash";
 import Logger from "../framework/Logger";
 import EnvironmentConfig from "../views/common/EnvironmentConfig";
-import CookieManager from '@react-native-community/cookies';
+import CookieManager from 'react-native-cookies';
 
 @Service("userService")
 class UserService extends BaseService {
@@ -27,7 +27,7 @@ class UserService extends BaseService {
 
             const xsrfTokenCookie = cookies["XSRF-TOKEN"];
             if (!_.isNil(xsrfTokenCookie)) {
-                headerData["X-XSRF-TOKEN"] = xsrfTokenCookie.value;
+                headerData["X-XSRF-TOKEN"] = xsrfTokenCookie;
             }
             requestInfo.headers = new Headers(headerData);
 
